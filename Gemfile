@@ -56,6 +56,8 @@ gem 'cancan'
 
 gem 'activeresource'
 
+gem 'her'
+
 group :development do
   gem 'letter_opener_web'
 end
