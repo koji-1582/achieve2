@@ -442,6 +442,11 @@ template {
  * Add the correct display in IE 10-.
  */
 
+ img{
+   max-width: 100%;
+ }
+
+
 [hidden] {
   display: none;
 }
