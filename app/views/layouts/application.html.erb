@@ -10,34 +10,32 @@
 <body>
 
   <header>
-    <nav class="navbar navbar-default">
+   <nav class="navbar navbar-inverse">
     <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
-     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#top-nav" aria-expanded="false">
               <span class="sr-only">Toggle navigation</span>
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
      </button>
     </div>
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse">
-      <ul class="nav navbar-nav navbar-right">
-      <li><%= link_to "Achieve", root_path %></li>
-      <li><%= link_to "トップページ", root_path %></li>
-      <li><%= link_to "お問い合わせ", new_contact_path %></li>
-      <li><%= link_to "ブログ", blogs_path %></li>
-      <li><%= link_to 'マイページ', edit_user_registration_path %></li>
+    <div class="collapse navbar-collapse" id="top-nav">
+    <ul class="nav navbar-nav">
+      <li class="dropdown-header"><%= link_to "Achieve", root_path %></li>
+      <li class="dropdown-header"><%= link_to "トップページ", root_path %></li>
+      <li class="dropdown-header"><%= link_to "お問い合わせ", new_contact_path %></li>
+      <li class="dropdown-header"><%= link_to "ブログ", blogs_path %></li>
+      <li class="dropdown-header"><%= link_to 'マイページ', edit_user_registration_path %></li>
       <% if user_signed_in? %>
-        <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+        <li class="dropdown-header"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
       <% else %>
-        <li><%= link_to 'ログイン', new_user_session_path %></li>
-        <li><%= link_to 'サインアップ', new_user_registration_path %></li>
+        <li class="dropdown-header"><%= link_to 'ログイン', new_user_session_path %></li>
+        <li class="dropdown-header"><%= link_to 'サインアップ', new_user_registration_path %></li>
       <% end %>
     </ul>
   </div><!-- /.navbar-collapse -->
-</div><!-- /.container-fluid -->
-</nav>
+ </nav><!-- /.container-fluid -->
   </header>
 
   <% flash.each do |key, value| %>
