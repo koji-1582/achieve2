@@ -1,5 +1,5 @@
 <ul>
-  <% @comments.each do |comment| %>
+  <% comments.each do |comment| %>
     <% unless comment.id.nil? %>
       <li>
         <p class="left"><%= comment.user.name %>さんがコメントしました。</p>
