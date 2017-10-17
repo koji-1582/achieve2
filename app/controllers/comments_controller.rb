@@ -19,13 +19,13 @@ class CommentsController < ApplicationController
 
 
   def destroy
-@comment = Comment.find(params[:id])
-@comment.destroy
-flash.now[:notice] = 'コメントを削除しました。'
-respond_to do |format|
-format.js { render :index }
-end
-end
+    @comment = Comment.find(params[:id])
+    @comment.destroy
+    flash.now[:notice] = 'コメントを削除しました。'
+    respond_to do |format|
+    format.js { render :index }
+    end
+  end
 
 
 
