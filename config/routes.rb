@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'notifications/index'
+
   devise_for :users, controllers: {
     registrations: "users/registrations",
     omniauth_callbacks: "users/omniauth_callbacks"
@@ -33,6 +35,10 @@ Rails.application.routes.draw do
   get 'blogs' => 'blogs#index'
 
   resources :poems, only: [:index, :show]
+
+  resources :conversations do
+   resources :messages
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
